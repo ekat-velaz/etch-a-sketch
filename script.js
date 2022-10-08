@@ -7,6 +7,7 @@ let selectedColor = colorPicker.value;
 
 const eraser = document.querySelector(".btn-erase");
 const cell = document.querySelector(".btn-cell");
+const noCell = document.querySelector(".btn-nocell");
 const clearGrid = document.querySelector(".btn-clear");
 
 const colorPickerBgr = document.querySelector("#colorPickerBgr");
@@ -69,10 +70,20 @@ colorPickerBgr.addEventListener("input", () => {
 });
 
 clearGrid.addEventListener("click", () => {
-    
+    for (const child of container.children) {
+        child.style.backgroundColor = "transparent";
+    };
 });
 
 
 cell.addEventListener("click", () => {
-    square.style.borderColor = "transparent";
+    for (const child of container.children) {
+        child.style.borderColor = "rgba(0, 0, 0, 0.182)";
+    };
+});
+
+noCell.addEventListener("click", () => {
+    for (const child of container.children) {
+        child.style.borderColor = "transparent";
+    };
 });

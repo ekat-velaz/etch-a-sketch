@@ -4,6 +4,10 @@
     border-color: rgba(0, 0, 0, 0.182);
 }
 
+.borderFalse {
+    border-color: transparent;
+}
+
 .squareContainer {
     display: grid;
     grid-auto-rows: 100px;
