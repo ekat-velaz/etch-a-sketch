@@ -9,7 +9,12 @@
     <title>Etch-a-sketch</title>
 </head>
 <body>
-    <input type="color" id="colorPicker">
+<div class="input-color-container">
+    <label id="colorPickerLabel"><input type="color" id="colorPicker"></label>
+</div>
+<div class="input-color-container">
+    <input type="color" id="colorPickerBgr" value = "#ffffff">
+</div>
     <div class = "squareContainer"></div>
     <input type="range" min="1" max="60" value="30" list="rangeList" id="range"><span id="rangeValue"></span>
     <datalist id="rangeList">
@@ -18,5 +23,8 @@
         <option value="40" label="40">
         <option value="60" label="60">
     </datalist>  
+<button class = "btn-erase">Erase button</button>
+<button class = "btn-cell">Cell</button>
+<button class = "btn-clear">Clear grid</button>
 </body>
 </html>
