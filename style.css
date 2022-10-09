@@ -14,24 +14,98 @@
     grid-template-columns: repeat(30, 1fr); grid-template-rows: repeat(30, 1fr);
     width: 500px;
     height: 500px;
+    border: solid 50px #7CA24D;
 };
 
 .input-color-container {
-    /*position: relative;
-    overflow: hidden; */
+    overflow: hidden; 
     width: 40px;
     height: 40px;
-    border: none;
-    border-radius: 50px;
+    border: solid 10px #475E2C;
   } 
   
 
   #colorPicker, #colorPickerBgr {
-   /* position: absolute;
-    right: -8px;
-    top: -8px; */
     width: 56px;
     height: 56px;
-    border: none; 
-    color: w;
+    border: solid 5px #7CA24D;
   } 
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF4E7;
+    color: #475E2C;
+    font-size: 20px;
+    
+    
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+  }
+
+  button {
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 900;
+    background-color: #AEC98D;
+    color: #475E2C;
+    border-style: none;
+    border-radius: 30px;
+    border: solid 10px #7CA24D;
+  }
+
+  button:focus, button:hover {
+    background-color: #475E2C;
+    color: #EEF4E7;
+  }
+
+  .colorText {
+    color: #475E2C;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  
+  h1 {
+    font-size: 50px;
+    margin: 20px;
+  }
+
+  .bigContainer {
+    display: flex;
+    gap: 50px;
+  }
+
+  .gridSize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#AEC98D;
+    color: #475E2C;
+    border: solid 5px #475E2C;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .imageFrog {
+    width: 250px;
+    height: 250px;
+  }
+
+  .right-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
