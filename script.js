@@ -1,5 +1,6 @@
 let square;
 let drawing = false;
+let rainbowMode = false;
 const container = document.querySelector(".squareContainer");
 
 const colorPicker = document.querySelector("#colorPicker");
@@ -8,6 +9,7 @@ let selectedColor = colorPicker.value;
 const eraser = document.querySelector(".btn-erase");
 const cell = document.querySelector(".btn-cell");
 const noCell = document.querySelector(".btn-nocell");
+const rainbow = document.querySelector(".btn-randomColor")
 const clearGrid = document.querySelector(".btn-clear");
 
 const colorPickerBgr = document.querySelector("#colorPickerBgr");
@@ -22,13 +24,22 @@ function createDivs(squareCount) {
         
         square.addEventListener('mouseover', (e) => {
             if (drawing == true) {
+                if (rainbowMode == false) {
                 e.target.style.backgroundColor = selectedColor;
+            } else if (rainbowMode == true) {
+                e.target.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
+            };
             };
         });
         square.addEventListener('mousedown', (e) => {
         drawing = true;
+        if (rainbowMode == false) {
         e.target.style.backgroundColor = selectedColor;
+        } else if (rainbowMode == true) {
+            e.target.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
+        };
             });
+
         square.addEventListener('mouseup', () => {
         drawing = false;
         });
@@ -44,6 +55,7 @@ createDivs(30);
 
 eraser.addEventListener('click', () => {
     selectedColor = "transparent";
+    rainbowMode = false;
 });
 
 const range = document.querySelector("#range");
@@ -62,6 +74,8 @@ range.addEventListener("input", () => {
 
 colorPicker.addEventListener("input", () => {
     selectedColor = colorPicker.value;
+    rainbowMode = false;
+    console.log(rainbowMode);
 });
 
 colorPickerBgr.addEventListener("input", () => {
@@ -87,3 +101,18 @@ noCell.addEventListener("click", () => {
         child.style.borderColor = "transparent";
     };
 });
+
+
+
+
+function getRandom(min, max){
+    return Math.ceil(Math.random() * (max - min) + min);
+  };
+
+  rainbow.addEventListener("click", () => {
+    if (rainbowMode == false) {
+        rainbowMode = true;
+    } else if (rainbowMode == true) {
+        rainbowMode = false;
+    };
+  } );
